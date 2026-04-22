@@ -226,7 +226,7 @@ function render(){
     }).join("");
     const memoHtml=item.memo?'<div style="margin-top:8px;border-top:1px solid #f0f0f0;padding-top:10px;"><div class="memo-label">내부 메모</div><div class="memo-box">'+item.memo.replace(/\n/g,'<br>')+'</div></div>':'';
     const imgHtml=(item.images&&item.images.length)?'<div class="img-section"><div class="img-label">참고 이미지 — 클릭하면 크게 보기</div><div style="display:flex;flex-wrap:wrap;gap:8px;">'+item.images.map(k=>'<img src="'+IMGS[k]+'" class="img-thumb" onclick="openLightbox(\''+k+'\')" alt="참고 이미지">').join("")+'</div></div>':'';
-    return '<div class="card"><div class="card-header"><div class="card-title">'+item.title+'</div><span class="badge">'+item.category+'</span></div><div class="keywords">'+item.keywords.slice(0,6).map(k=>'<span>'+k+'</span>').join("")+'</div>'+answersHtml+memoHtml+imgHtml+'</div>';
+    return '<div class="card"><div class="card-header"><div class="card-title">'+item.title+'</div><span class="badge">'+item.category+'</span></div><div class="keywords">'+item.keywords.map(k=>'<span>'+k+'</span>').join("")+'</div>'+answersHtml+memoHtml+imgHtml+'</div>';
   }).join("");
 }
 
