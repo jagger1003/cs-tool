@@ -326,15 +326,24 @@ function loadFromLocal(){
 function exportFile(){
   const today=new Date();
   const ds=today.getFullYear()+"-"+String(today.getMonth()+1).padStart(2,"0")+"-"+String(today.getDate()).padStart(2,"0");
-  document.getElementById("updateDate").textContent="최종 업데이트: "+ds;
-  switchTab("search");
-  setTimeout(()=>{
-    const blob=new Blob([document.documentElement.outerHTML],{type:"text/html"});
-    const a=document.createElement("a");
-    a.href=URL.createObjectURL(blob);
-    a.download="cs_tool.html";
-    a.click();
-  },200);
+  fetch(location.href)
+    .then(r=>r.text())
+    .then(src=>{
+      const dataStr=JSON.stringify(DATA);
+      src=src.replace(/let DATA = \[[\s\S]*?\];/, "let DATA = "+dataStr+";");
+      src=src.replace(/let nextId = \d+;/, "let nextId = "+nextId+";");
+      src=src.replace(/최종 업데이트: [\d\-]+/, "최종 업데이트: "+ds);
+      switchTab("search");
+      const blob=new Blob([src],{type:"text/html"});
+      const a=document.createElement("a");
+      a.href=URL.createObjectURL(blob);
+      a.download="cs_tool.html";
+      a.click();
+    })
+    .catch(()=>{
+      alert("GitHub URL에서 열어야 내보내기가 정상 작동합니다.
+https://jagger1003.github.io/cs-tool/cs_tool.html");
+    });
 }
 
 loadFromLocal();
