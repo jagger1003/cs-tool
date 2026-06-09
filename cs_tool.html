@@ -1,4 +1,6 @@
-<html lang="ko"><head>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CS 답변 검색 도구</title>
@@ -74,29 +76,29 @@ h1{font-size:18px;font-weight:600;color:#111;}
 <div class="app">
   <div class="header">
     <h1>CS 답변 검색 도구</h1>
-    <span class="update-date" id="updateDate">최종 업데이트: 2026-05-27</span>
+    <span class="update-date" id="updateDate">최종 업데이트: 2026-06-08</span>
   </div>
   <div class="tab-bar">
     <button class="tab-btn active" onclick="switchTab('search')">검색</button>
     <button class="tab-btn" onclick="switchTab('manage')">관리</button>
   </div>
-  <div id="tab-search" style="">
+  <div id="tab-search">
     <div class="search-bar"><input type="text" id="searchInput" placeholder="키워드 입력 (예: 충전, 연동, 번호변경...)" oninput="render()"></div>
-    <div class="tag-bar" id="tagBar"><button class="tag active">전체</button><button class="tag">충전/결제</button><button class="tag">기사앱</button><button class="tag">주문 연동</button><button class="tag">주문연동</button><button class="tag">배민커넥트</button></div>
-    <div class="count" id="countText">8개 항목</div>
-    <div id="results"><div class="card"><div class="card-header"><div class="card-title">매장비서 충전 시 계좌없음 오류</div><span class="badge">충전/결제</span></div><div class="keywords"><span>충전</span><span>계좌없음</span><span>계좌 없음</span><span>충전 안됨</span><span>충전 안 됩니다</span><span>충전이 안</span></div><div><div class="answer-label">직접 설정 안내</div><div class="answer-box" id="ans_1_0">매장비서 ERP → 가맹점관리 → 배달대행 연동에서 은행명 및 가상계좌 입력 후 저장해 주시면 처리 가능합니다.</div><button class="copy-btn" onclick="copyText('ans_1_0',this)">복사</button></div><div><div class="answer-label">정보 받아서 처리</div><div class="answer-box" id="ans_1_1">가맹점 사업자번호, 사용하고 계신 대행사명, 배달대행 가상계좌 정보 알려주시면 처리해 드리겠습니다.</div><button class="copy-btn" onclick="copyText('ans_1_1',this)">복사</button></div><div class="img-section"><div class="img-label">참고 이미지 — 클릭하면 크게 보기</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><img src="https://jagger1003.github.io/cs-tool/img8.png" class="img-thumb" onclick="openLightbox('img8')" alt="참고 이미지"></div></div></div><div class="card"><div class="card-header"><div class="card-title">배달기사 휴대폰 번호 변경</div><span class="badge">기사앱</span></div><div class="keywords"><span>번호 변경</span><span>번호변경</span><span>휴대폰 번호</span><span>인증 변경</span><span>기사 번호</span><span>단말기 번호</span></div><div><div class="answer-box" id="ans_2_0">변경 완료하였습니다. 기사앱 재실행 하시면 접속 가능합니다.</div><button class="copy-btn" onclick="copyText('ans_2_0',this)">복사</button></div><div style="margin-top:8px;border-top:1px solid #f0f0f0;padding-top:10px;"><div class="memo-label">내부 메모</div><div class="memo-box">기사 수정 화면(기사 정보 탭)에서 단말기 번호와 연락처 번호 두 곳을 모두 변경해야 기사 앱 접속 가능.</div></div><div class="img-section"><div class="img-label">참고 이미지 — 클릭하면 크게 보기</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><img src="https://jagger1003.github.io/cs-tool/img1.png" class="img-thumb" onclick="openLightbox('img1')" alt="참고 이미지"></div></div></div><div class="card"><div class="card-header"><div class="card-title">타 POS 사용 중 주문 이중 접수</div><span class="badge">주문 연동</span></div><div class="keywords"><span>이중 접수</span><span>이중접수</span><span>2개 접수</span><span>두 번 접수</span><span>메이트포스</span><span>배민 2개</span><span>중복 접수</span><span>연동 설정</span></div><div><div class="answer-label">딜리온 가맹점</div><div class="answer-box" id="ans_3_0">가맹점 프로그램 환경설정 → 주문연동설정에서 '배달의민족 프로그램과 직접 연동 사용' 체크를 해제해 주시면 됩니다.</div><button class="copy-btn" onclick="copyText('ans_3_0',this)">복사</button></div><div><div class="answer-label">타 프로그램</div><div class="answer-box" id="ans_3_1">배달대행사 가맹점 프로그램 내 배민 연동을 해제해 주시면 됩니다.</div><button class="copy-btn" onclick="copyText('ans_3_1',this)">복사</button></div><div class="img-section"><div class="img-label">참고 이미지 — 클릭하면 크게 보기</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><img src="https://jagger1003.github.io/cs-tool/img2.png" class="img-thumb" onclick="openLightbox('img2')" alt="참고 이미지"></div></div></div><div class="card"><div class="card-header"><div class="card-title">땡겨요 주문이 매장비서에 안 뜸</div><span class="badge">주문 연동</span></div><div class="keywords"><span>땡겨요</span><span>땡겨요 연동</span><span>땡겨요 안됨</span><span>땡겨요 접수</span><span>땡겨요 설정</span></div><div><div class="answer-label">매장비서 설정</div><div class="answer-box" id="ans_4_0">매장비서 내 땡겨요 주문 연동 설정을 해 주시면 주문 접수 내역 확인이 가능합니다.</div><button class="copy-btn" onclick="copyText('ans_4_0',this)">복사</button></div><div><div class="answer-label">딜리온 사용 중</div><div class="answer-box" id="ans_4_1">땡겨요 주문 접수 프로그램 내 '배달하기' 버튼을 눌러 연동하시면 됩니다.</div><button class="copy-btn" onclick="copyText('ans_4_1',this)">복사</button></div><div class="img-section"><div class="img-label">참고 이미지 — 클릭하면 크게 보기</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><img src="https://jagger1003.github.io/cs-tool/img3.png" class="img-thumb" onclick="openLightbox('img3')" alt="참고 이미지"></div></div></div><div class="card"><div class="card-header"><div class="card-title">요기요 주문 이중 접수</div><span class="badge">주문 연동</span></div><div class="keywords"><span>요기요 2개</span><span>요기요 중복</span><span>요기요 콜 2개</span><span>요기요 이중접수</span><span>요기요 중복 접수</span><span>요기요 두 번</span></div><div><div class="answer-box" id="ans_5_0">영수증 출력 시 연동이 1건 더 되어 제외 처리하였습니다. 다음 주문부터는 정상적으로 접수되실 겁니다.</div><button class="copy-btn" onclick="copyText('ans_5_0',this)">복사</button></div><div style="margin-top:8px;border-top:1px solid #f0f0f0;padding-top:10px;"><div class="memo-label">내부 메모</div><div class="memo-box">1. 영수증 파싱 화면에서 해당 매장 통합ID/영수증 번호로 중복 건 확인<br>2. 파싱마스터에서 해당 매장 검색<br>3. 제외 프로그램에 spoolsv.exe 추가 후 저장<br>→ 영수증 출력 연동으로 인한 중복 접수 케이스</div></div><div class="img-section"><div class="img-label">참고 이미지 — 클릭하면 크게 보기</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><img src="https://jagger1003.github.io/cs-tool/img4.png" class="img-thumb" onclick="openLightbox('img4')" alt="참고 이미지"><img src="https://jagger1003.github.io/cs-tool/img5.png" class="img-thumb" onclick="openLightbox('img5')" alt="참고 이미지"><img src="https://jagger1003.github.io/cs-tool/img6.png" class="img-thumb" onclick="openLightbox('img6')" alt="참고 이미지"></div></div></div><div class="card"><div class="card-header"><div class="card-title">배민 요기요 연동 고유 코드 확인</div><span class="badge">주문연동</span></div><div class="keywords"><span>배민연동</span><span>요기요연동</span><span>인증번호</span><span>고유코드</span><span>연동코드</span><span>아이디인증번호</span><span>코드값</span><span>연동번호</span><span>모바일연동</span><span>배민모바일</span><span>요기요모바일</span></div><div><div class="answer-box" id="ans_6_0">가맹점 프로그램 내 환경설정 → 주문연동설정 화면에서 외부 프로그램 연동용 가맹점 고유 코드 확인해서 입력해 주시면 됩니다.</div><button class="copy-btn" onclick="copyText('ans_6_0',this)">복사</button></div><div style="margin-top:8px;border-top:1px solid #f0f0f0;padding-top:10px;"><div class="memo-label">내부 메모</div><div class="memo-box">배민 및 요기요 사장님 사이트에서 배달대행사 연동 시(주문앱 내 모바일 연동을 위해서) 사업자 번호 또는 딜리온 가맹점 프로그램 아이디와 고유 코드 입력이 필요함. 딜리온 가맹점 프로그램의 주문앱 연동설정에서 외부 프로그램 연동용 가맹점 코드 확인 가능</div></div><div class="img-section"><div class="img-label">참고 이미지 — 클릭하면 크게 보기</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><img src="https://jagger1003.github.io/cs-tool/img7.png" class="img-thumb" onclick="openLightbox('img7')" alt="참고 이미지"></div></div></div><div class="card"><div class="card-header"><div class="card-title">신규 오픈 및 재오픈 기준</div><span class="badge">배민커넥트</span></div><div class="keywords"><span>신규오픈</span><span>기사등록</span><span>오픈</span><span>배민오픈</span><span>신규협력사오픈</span><span>재오픈</span><span>준비중전환</span><span>운영전환</span></div><div><div class="answer-label">신규오픈</div><div class="answer-box" id="ans_7_0">매주 수요일 오전 8시 30분까지 기사 5명 이상 등록 시, 오전 9시 오픈이 가능합니다. 자동 오픈이 지연될 경우 당일 오전 10시 및 오후 2시에 기사 등록 후 본사로 요청 주시면 추가 오픈이 가능하니 참고 부탁 드립니다</div><button class="copy-btn" onclick="copyText('ans_7_0',this)">복사</button></div><div><div class="answer-label">재오픈</div><div class="answer-box" id="ans_7_1">준비중 상태에서 재오픈은 기사 5명 이상 등록 시 수요일 오전 10시, 오후 2시 오픈 가능합니다. 사전에 본사로 요청해 주셔야 처리 가능합니다.</div><button class="copy-btn" onclick="copyText('ans_7_1',this)">복사</button></div><div style="margin-top:8px;border-top:1px solid #f0f0f0;padding-top:10px;"><div class="memo-label">내부 메모</div><div class="memo-box">신규 오픈은 매주 수요일 오전9시, 기사 등록 늦어지면 오전 10시, 오후 2시가 마지막이고 보류된 상태에서 재오픈은 기사 등록 완료 후 배민커넥트비즈 채널톡으로 문의 시 매주 수요일 오전 10시, 오후 2시 오픈 가능함.</div></div></div><div class="card"><div class="card-header"><div class="card-title">딜리온 기사앱 접속 불가(튕김 오류)</div><span class="badge">기사앱</span></div><div class="keywords"><span>기사앱</span><span>접속불가</span><span>튕김</span><span>기사앱안됨</span><span>실행안됨</span><span>기사앱실행안됨</span><span>오토클리커</span><span>매크로</span></div><div><div class="answer-box" id="ans_8_0">휴대폰 내에 오토클리커 같은 매크로 어플이 설치 되어있는 경우 정상 실행이 안될 수 있습니다. 해당 어플 제거 후 재실행 부탁 드리겠습니다.</div><button class="copy-btn" onclick="copyText('ans_8_0',this)">복사</button></div><div style="margin-top:8px;border-top:1px solid #f0f0f0;padding-top:10px;"><div class="memo-label">내부 메모</div><div class="memo-box">딜리온 기사 APP을 켰을때 바로 튕기면서 실행이 안되는 증상</div></div></div></div>
+    <div class="tag-bar" id="tagBar"></div>
+    <div class="count" id="countText"></div>
+    <div id="results"></div>
   </div>
-  <div id="tab-manage" style="display: none;">
+  <div id="tab-manage" style="display:none;">
     <div style="display:flex;gap:8px;margin-bottom:1.25rem;">
       <button class="btn-add" onclick="openModal(null)">+ 새 항목 추가</button>
-      <button class="btn-export" onclick="exportFile()">↓ 파일로 내보내기</button>
+      <button class="btn-export" onclick="exportFile()">파일로 내보내기</button>
     </div>
-    <div id="mgmtList"><div class="mgmt-card"><div class="mgmt-title">매장비서 충전 시 계좌없음 오류</div><div class="mgmt-meta">충전/결제 · 키워드 6개 · 답변 2개 · 이미지 1개</div><div class="mgmt-actions"><button class="btn-edit" onclick="openModal(1)">수정</button><button class="btn-del" onclick="deleteItem(1)">삭제</button></div></div><div class="mgmt-card"><div class="mgmt-title">배달기사 휴대폰 번호 변경</div><div class="mgmt-meta">기사앱 · 키워드 6개 · 답변 1개 · 이미지 1개</div><div class="mgmt-actions"><button class="btn-edit" onclick="openModal(2)">수정</button><button class="btn-del" onclick="deleteItem(2)">삭제</button></div></div><div class="mgmt-card"><div class="mgmt-title">타 POS 사용 중 주문 이중 접수</div><div class="mgmt-meta">주문 연동 · 키워드 8개 · 답변 2개 · 이미지 1개</div><div class="mgmt-actions"><button class="btn-edit" onclick="openModal(3)">수정</button><button class="btn-del" onclick="deleteItem(3)">삭제</button></div></div><div class="mgmt-card"><div class="mgmt-title">땡겨요 주문이 매장비서에 안 뜸</div><div class="mgmt-meta">주문 연동 · 키워드 5개 · 답변 2개 · 이미지 1개</div><div class="mgmt-actions"><button class="btn-edit" onclick="openModal(4)">수정</button><button class="btn-del" onclick="deleteItem(4)">삭제</button></div></div><div class="mgmt-card"><div class="mgmt-title">요기요 주문 이중 접수</div><div class="mgmt-meta">주문 연동 · 키워드 6개 · 답변 1개 · 이미지 3개</div><div class="mgmt-actions"><button class="btn-edit" onclick="openModal(5)">수정</button><button class="btn-del" onclick="deleteItem(5)">삭제</button></div></div><div class="mgmt-card"><div class="mgmt-title">배민 요기요 연동 고유 코드 확인</div><div class="mgmt-meta">주문연동 · 키워드 11개 · 답변 1개 · 이미지 1개</div><div class="mgmt-actions"><button class="btn-edit" onclick="openModal(6)">수정</button><button class="btn-del" onclick="deleteItem(6)">삭제</button></div></div><div class="mgmt-card"><div class="mgmt-title">신규 오픈 및 재오픈 기준</div><div class="mgmt-meta">배민커넥트 · 키워드 8개 · 답변 2개</div><div class="mgmt-actions"><button class="btn-edit" onclick="openModal(7)">수정</button><button class="btn-del" onclick="deleteItem(7)">삭제</button></div></div><div class="mgmt-card"><div class="mgmt-title">딜리온 기사앱 접속 불가(튕김 오류)</div><div class="mgmt-meta">기사앱 · 키워드 8개 · 답변 1개</div><div class="mgmt-actions"><button class="btn-edit" onclick="openModal(8)">수정</button><button class="btn-del" onclick="deleteItem(8)">삭제</button></div></div></div>
+    <div id="mgmtList"></div>
   </div>
 </div>
 <div class="modal-bg" id="modalBg">
   <div class="modal">
-    <h3 id="modalTitle">항목 수정</h3>
+    <h3 id="modalTitle">새 항목 추가</h3>
     <div class="form-row">
       <div class="form-group"><label>카테고리</label><input type="text" id="fCat" placeholder="예: 주문 연동"></div>
       <div class="form-group"><label>제목</label><input type="text" id="fTitle" placeholder="문의 유형 요약"></div>
@@ -105,7 +107,7 @@ h1{font-size:18px;font-weight:600;color:#111;}
     <div class="form-group"><label>내부 메모 (직원용, 선택사항)</label><textarea id="fMemo" placeholder="처리 방법, 주의사항 등 내부 참고용 내용"></textarea></div>
     <div class="answers-section">
       <h4>답변 목록</h4>
-      <div id="answersEditor"><div class="answer-row"><input type="text" placeholder="구분명" value="처리 방법"><textarea placeholder="답변 내용">기사 수정 화면(기사 정보 탭)에서 단말기 번호와 연락처 번호 두 곳을 모두 변경해 주시면 기사 앱 접속이 가능합니다.</textarea><button class="btn-rm" onclick="this.parentElement.remove()">×</button></div></div>
+      <div id="answersEditor"></div>
       <button class="btn-add-ans" onclick="addAnswerRow('','')">+ 답변 추가</button>
     </div>
     <div class="modal-footer">
@@ -118,194 +120,268 @@ h1{font-size:18px;font-weight:600;color:#111;}
   <img id="lbImg" src="" alt="참고 이미지">
 </div>
 <script>
-const BASE_URL = "https://jagger1003.github.io/cs-tool/";
-
-const IMGS = {
-  img1: BASE_URL + "img1.png",
-  img2: BASE_URL + "img2.png",
-  img3: BASE_URL + "img3.png",
-  img4: BASE_URL + "img4.png",
-  img5: BASE_URL + "img5.png",
-  img6: BASE_URL + "img6.png",
-  img7: BASE_URL + "img7.png",
-  img8: BASE_URL + "img8.png"
+var BASE_URL = "https://jagger1003.github.io/cs-tool/";
+var IMGS = {
+  img1: BASE_URL+"img1.png", img2: BASE_URL+"img2.png", img3: BASE_URL+"img3.png",
+  img4: BASE_URL+"img4.png", img5: BASE_URL+"img5.png", img6: BASE_URL+"img6.png",
+  img7: BASE_URL+"img7.png", img8: BASE_URL+"img8.png"
 };
+var DATA = [{"id": 1, "category": "충전/결제", "title": "매장비서 충전 시 계좌없음 오류", "keywords": ["충전", "계좌없음", "계좌 없음", "충전 안됨", "충전 안 됩니다", "충전이 안"], "memo": "", "answers": [{"label": "직접 설정 안내", "text": "매장비서 ERP → 가맹점관리 → 배달대행 연동에서 은행명 및 가상계좌 입력 후 저장해 주시면 처리 가능합니다."}, {"label": "정보 받아서 처리", "text": "가맹점 사업자번호, 사용하고 계신 대행사명, 배달대행 가상계좌 정보 알려주시면 처리해 드리겠습니다."}], "images": ["img8"]}, {"id": 2, "category": "기사앱", "title": "배달기사 휴대폰 번호 변경", "keywords": ["번호 변경", "번호변경", "휴대폰 번호", "인증 변경", "기사 번호", "단말기 번호"], "memo": "기사 수정 화면(기사 정보 탭)에서 단말기 번호와 연락처 번호 두 곳을 모두 변경해야 기사 앱 접속 가능.", "answers": [{"label": "처리 방법", "text": "변경 완료하였습니다. 기사앱 재실행 하시면 접속 가능합니다."}], "images": ["img1"]}, {"id": 3, "category": "주문 연동", "title": "타 POS 사용 중 주문 이중 접수", "keywords": ["이중 접수", "이중접수", "2개 접수", "두 번 접수", "메이트포스", "배민 2개", "중복 접수", "연동 설정"], "memo": "", "answers": [{"label": "딜리온 가맹점", "text": "가맹점 프로그램 환경설정 → 주문연동설정에서 '배달의민족 프로그램과 직접 연동 사용' 체크를 해제해 주시면 됩니다."}, {"label": "타 프로그램", "text": "배달대행사 가맹점 프로그램 내 배민 연동을 해제해 주시면 됩니다."}], "images": ["img2"]}, {"id": 4, "category": "주문 연동", "title": "땡겨요 주문이 매장비서에 안 뜸", "keywords": ["땡겨요", "땡겨요 연동", "땡겨요 안됨", "땡겨요 접수", "땡겨요 설정"], "memo": "", "answers": [{"label": "매장비서 설정", "text": "매장비서 내 땡겨요 주문 연동 설정을 해 주시면 주문 접수 내역 확인이 가능합니다."}, {"label": "딜리온 사용 중", "text": "땡겨요 주문 접수 프로그램 내 '배달하기' 버튼을 눌러 연동하시면 됩니다."}], "images": ["img3"]}, {"id": 5, "category": "주문 연동", "title": "요기요 주문 이중 접수", "keywords": ["요기요 2개", "요기요 중복", "요기요 콜 2개", "요기요 이중접수", "요기요 중복 접수", "요기요 두 번"], "memo": "1. 영수증 파싱 화면에서 해당 매장 통합ID/영수증 번호로 중복 건 확인\n2. 파싱마스터에서 해당 매장 검색\n3. 제외 프로그램에 spoolsv.exe 추가 후 저장\n→ 영수증 출력 연동으로 인한 중복 접수 케이스", "answers": [{"label": "고객 답변", "text": "영수증 출력 시 연동이 1건 더 되어 제외 처리하였습니다. 다음 주문부터는 정상적으로 접수되실 겁니다."}], "images": ["img4", "img5", "img6"]}, {"id": 6, "category": "주문연동", "title": "배민 요기요 연동 고유 코드 확인", "keywords": ["배민연동", "요기요연동", "인증번호", "고유코드", "연동코드", "아이디인증번호", "코드값", "연동번호", "모바일연동", "배민모바일", "요기요모바일"], "memo": "배민 및 요기요 사장님 사이트에서 배달대행사 연동 시(주문앱 내 모바일 연동을 위해서) 사업자 번호 또는 딜리온 가맹점 프로그램 아이디와 고유 코드 입력이 필요함. 딜리온 가맹점 프로그램의 주문앱 연동설정에서 외부 프로그램 연동용 가맹점 코드 확인 가능", "answers": [{"label": "고유코드확인", "text": "가맹점 프로그램 내 환경설정 → 주문연동설정 화면에서 외부 프로그램 연동용 가맹점 고유 코드 확인해서 입력해 주시면 됩니다."}], "images": ["img7"]}, {"id": 7, "category": "배민커넥트", "title": "신규 오픈 및 재오픈 기준", "keywords": ["신규오픈", "기사등록", "오픈", "배민오픈", "신규협력사오픈", "재오픈", "준비중전환", "운영전환"], "memo": "신규 오픈은 매주 수요일 오전9시, 기사 등록 늦어지면 오전 10시, 오후 2시가 마지막이고 보류된 상태에서 재오픈은 기사 등록 완료 후 배민커넥트비즈 채널톡으로 문의 시 매주 수요일 오전 10시, 오후 2시 오픈 가능함.", "answers": [{"label": "신규오픈", "text": "매주 수요일 오전 8시 30분까지 기사 5명 이상 등록 시, 오전 9시 오픈이 가능합니다. 자동 오픈이 지연될 경우 당일 오전 10시 및 오후 2시에 기사 등록 후 본사로 요청 주시면 추가 오픈이 가능하니 참고 부탁 드립니다"}, {"label": "재오픈", "text": "준비중 상태에서 재오픈은 기사 5명 이상 등록 시 수요일 오전 10시, 오후 2시 오픈 가능합니다. 사전에 본사로 요청해 주셔야 처리 가능합니다."}], "images": []}, {"id": 8, "category": "기사앱", "title": "딜리온 기사앱 접속 불가(튕김 오류)", "keywords": ["기사앱", "접속불가", "튕김", "기사앱안됨", "실행안됨", "기사앱실행안됨", "오토클리커", "매크로"], "memo": "딜리온 기사 APP을 켰을때 바로 튕기면서 실행이 안되는 증상", "answers": [{"label": "처리 방법", "text": "휴대폰 내에 오토클리커 같은 매크로 어플이 설치 되어있는 경우 정상 실행이 안될 수 있습니다. 해당 어플 제거 후 재실행 부탁 드리겠습니다."}], "images": []}];
+var nextId = 9;
+var editingId = null;
+var activeTag = "전체";
+var FILE_VERSION = "v12";
 
-let DATA = [{"id": 1, "category": "충전/결제", "title": "매장비서 충전 시 계좌없음 오류", "keywords": ["충전", "계좌없음", "계좌 없음", "충전 안됨", "충전 안 됩니다", "충전이 안"], "memo": "", "answers": [{"label": "직접 설정 안내", "text": "매장비서 ERP → 가맹점관리 → 배달대행 연동에서 은행명 및 가상계좌 입력 후 저장해 주시면 처리 가능합니다."}, {"label": "정보 받아서 처리", "text": "가맹점 사업자번호, 사용하고 계신 대행사명, 배달대행 가상계좌 정보 알려주시면 처리해 드리겠습니다."}], "images": ["img8"]}, {"id": 2, "category": "기사앱", "title": "배달기사 휴대폰 번호 변경", "keywords": ["번호 변경", "번호변경", "휴대폰 번호", "인증 변경", "기사 번호", "단말기 번호"], "memo": "기사 수정 화면(기사 정보 탭)에서 단말기 번호와 연락처 번호 두 곳을 모두 변경해야 기사 앱 접속 가능.", "answers": [{"label": "처리 방법", "text": "변경 완료하였습니다. 기사앱 재실행 하시면 접속 가능합니다."}], "images": ["img1"]}, {"id": 3, "category": "주문 연동", "title": "타 POS 사용 중 주문 이중 접수", "keywords": ["이중 접수", "이중접수", "2개 접수", "두 번 접수", "메이트포스", "배민 2개", "중복 접수", "연동 설정"], "memo": "", "answers": [{"label": "딜리온 가맹점", "text": "가맹점 프로그램 환경설정 → 주문연동설정에서 '배달의민족 프로그램과 직접 연동 사용' 체크를 해제해 주시면 됩니다."}, {"label": "타 프로그램", "text": "배달대행사 가맹점 프로그램 내 배민 연동을 해제해 주시면 됩니다."}], "images": ["img2"]}, {"id": 4, "category": "주문 연동", "title": "땡겨요 주문이 매장비서에 안 뜸", "keywords": ["땡겨요", "땡겨요 연동", "땡겨요 안됨", "땡겨요 접수", "땡겨요 설정"], "memo": "", "answers": [{"label": "매장비서 설정", "text": "매장비서 내 땡겨요 주문 연동 설정을 해 주시면 주문 접수 내역 확인이 가능합니다."}, {"label": "딜리온 사용 중", "text": "땡겨요 주문 접수 프로그램 내 '배달하기' 버튼을 눌러 연동하시면 됩니다."}], "images": ["img3"]}, {"id": 5, "category": "주문 연동", "title": "요기요 주문 이중 접수", "keywords": ["요기요 2개", "요기요 중복", "요기요 콜 2개", "요기요 이중접수", "요기요 중복 접수", "요기요 두 번"], "memo": "1. 영수증 파싱 화면에서 해당 매장 통합ID/영수증 번호로 중복 건 확인
-2. 파싱마스터에서 해당 매장 검색
-3. 제외 프로그램에 spoolsv.exe 추가 후 저장
-→ 영수증 출력 연동으로 인한 중복 접수 케이스", "answers": [{"label": "고객 답변", "text": "영수증 출력 시 연동이 1건 더 되어 제외 처리하였습니다. 다음 주문부터는 정상적으로 접수되실 겁니다."}], "images": ["img4", "img5", "img6"]}, {"id": 6, "category": "주문연동", "title": "배민 요기요 연동 고유 코드 확인", "keywords": ["배민연동", "요기요연동", "인증번호", "고유코드", "연동코드", "아이디인증번호", "코드값", "연동번호", "모바일연동", "배민모바일", "요기요모바일"], "memo": "배민 및 요기요 사장님 사이트에서 배달대행사 연동 시(주문앱 내 모바일 연동을 위해서) 사업자 번호 또는 딜리온 가맹점 프로그램 아이디와 고유 코드 입력이 필요함. 딜리온 가맹점 프로그램의 주문앱 연동설정에서 외부 프로그램 연동용 가맹점 코드 확인 가능", "answers": [{"label": "고유코드확인", "text": "가맹점 프로그램 내 환경설정 → 주문연동설정 화면에서 외부 프로그램 연동용 가맹점 고유 코드 확인해서 입력해 주시면 됩니다."}], "images": ["img7"]}, {"id": 7, "category": "배민커넥트", "title": "신규 오픈 및 재오픈 기준", "keywords": ["신규오픈", "기사등록", "오픈", "배민오픈", "신규협력사오픈", "재오픈", "준비중전환", "운영전환"], "memo": "신규 오픈은 매주 수요일 오전9시, 기사 등록 늦어지면 오전 10시, 오후 2시가 마지막이고 보류된 상태에서 재오픈은 기사 등록 완료 후 배민커넥트비즈 채널톡으로 문의 시 매주 수요일 오전 10시, 오후 2시 오픈 가능함.", "answers": [{"label": "신규오픈", "text": "매주 수요일 오전 8시 30분까지 기사 5명 이상 등록 시, 오전 9시 오픈이 가능합니다. 자동 오픈이 지연될 경우 당일 오전 10시 및 오후 2시에 기사 등록 후 본사로 요청 주시면 추가 오픈이 가능하니 참고 부탁 드립니다"}, {"label": "재오픈", "text": "준비중 상태에서 재오픈은 기사 5명 이상 등록 시 수요일 오전 10시, 오후 2시 오픈 가능합니다. 사전에 본사로 요청해 주셔야 처리 가능합니다."}], "images": []}, {"id": 8, "category": "기사앱", "title": "딜리온 기사앱 접속 불가(튕김 오류)", "keywords": ["기사앱", "접속불가", "튕김", "기사앱안됨", "실행안됨", "기사앱실행안됨", "오토클리커", "매크로"], "memo": "딜리온 기사 APP을 켰을때 바로 튕기면서 실행이 안되는 증상", "answers": [{"label": "처리 방법", "text": "휴대폰 내에 오토클리커 같은 매크로 어플이 설치 되어있는 경우 정상 실행이 안될 수 있습니다. 해당 어플 제거 후 재실행 부탁 드리겠습니다."}], "images": []}];
-
-let nextId = 9;
-let editingId = null;
-let activeTag = "전체";
-const FILE_VERSION = "v11";
-
-function cats(){return["전체",...new Set(DATA.map(d=>d.category))];}
-
-function switchTab(tab){
-  document.getElementById("tab-search").style.display=tab==="search"?"":"none";
-  document.getElementById("tab-manage").style.display=tab==="manage"?"":"none";
-  document.querySelectorAll(".tab-btn").forEach((b,i)=>b.classList.toggle("active",(i===0&&tab==="search")||(i===1&&tab==="manage")));
-  if(tab==="manage")renderMgmt();
-  if(tab==="search"){renderTags();render();}
+function cats() {
+  var c = ["전체"];
+  for(var i=0;i<DATA.length;i++) { if(c.indexOf(DATA[i].category)===-1) c.push(DATA[i].category); }
+  return c;
 }
 
-function matches(item){
-  if(activeTag!=="전체"&&item.category!==activeTag)return false;
-  const q=(document.getElementById("searchInput")?document.getElementById("searchInput").value:"").trim().toLowerCase();
-  if(!q)return true;
-  return item.title.toLowerCase().includes(q)||item.keywords.some(k=>k.toLowerCase().includes(q))||item.answers.some(a=>a.text.toLowerCase().includes(q));
+function switchTab(tab) {
+  document.getElementById("tab-search").style.display = tab==="search" ? "" : "none";
+  document.getElementById("tab-manage").style.display = tab==="manage" ? "" : "none";
+  var btns = document.querySelectorAll(".tab-btn");
+  for(var i=0;i<btns.length;i++) btns[i].classList.toggle("active",(i===0&&tab==="search")||(i===1&&tab==="manage"));
+  if(tab==="manage") renderMgmt();
+  if(tab==="search") { renderTags(); render(); }
 }
 
-function renderTags(){
-  const bar=document.getElementById("tagBar");
-  if(!bar)return;
-  bar.innerHTML="";
-  cats().forEach(cat=>{
-    const t=document.createElement("button");
-    t.className="tag"+(cat===activeTag?" active":"");
-    t.textContent=cat;
-    t.onclick=()=>{activeTag=cat;renderTags();render();};
-    bar.appendChild(t);
-  });
+function matches(item) {
+  if(activeTag!=="전체" && item.category!==activeTag) return false;
+  var el = document.getElementById("searchInput");
+  var q = el ? el.value.trim().toLowerCase() : "";
+  if(!q) return true;
+  if(item.title.toLowerCase().indexOf(q)>-1) return true;
+  for(var i=0;i<item.keywords.length;i++) { if(item.keywords[i].toLowerCase().indexOf(q)>-1) return true; }
+  for(var i=0;i<item.answers.length;i++) { if(item.answers[i].text.toLowerCase().indexOf(q)>-1) return true; }
+  return false;
 }
 
-function render(){
-  const filtered=DATA.filter(matches);
-  document.getElementById("countText").textContent=filtered.length+"개 항목";
-  const results=document.getElementById("results");
-  if(!filtered.length){results.innerHTML='<div class="empty">검색 결과가 없습니다</div>';return;}
-  results.innerHTML=filtered.map(item=>{
-    const answersHtml=item.answers.map((a,i)=>{
-      const elId="ans_"+item.id+"_"+i;
-      return '<div>'+(item.answers.length>1?'<div class="answer-label">'+a.label+'</div>':'')+'<div class="answer-box" id="'+elId+'">'+a.text+'</div><button class="copy-btn" onclick="copyText(\''+elId+'\',this)">복사</button></div>';
-    }).join("");
-    const memoHtml=item.memo?'<div style="margin-top:8px;border-top:1px solid #f0f0f0;padding-top:10px;"><div class="memo-label">내부 메모</div><div class="memo-box">'+item.memo.replace(/\n/g,'<br>')+'</div></div>':'';
-    const imgHtml=(item.images&&item.images.length)?'<div class="img-section"><div class="img-label">참고 이미지 — 클릭하면 크게 보기</div><div style="display:flex;flex-wrap:wrap;gap:8px;">'+item.images.map(k=>'<img src="'+IMGS[k]+'" class="img-thumb" onclick="openLightbox(\''+k+'\')" alt="참고 이미지">').join("")+'</div></div>':'';
-    return '<div class="card"><div class="card-header"><div class="card-title">'+item.title+'</div><span class="badge">'+item.category+'</span></div><div class="keywords">'+item.keywords.map(k=>'<span>'+k+'</span>').join("")+'</div>'+answersHtml+memoHtml+imgHtml+'</div>';
-  }).join("");
-}
-
-function copyText(id,btn){
-  const text=document.getElementById(id)?document.getElementById(id).textContent:"";
-  try{
-    navigator.clipboard.writeText(text).then(()=>{
-      btn.textContent="복사됨 ✓";btn.classList.add("copied");
-      setTimeout(()=>{btn.textContent="복사";btn.classList.remove("copied");},1500);
-    });
-  }catch(e){
-    const el=document.getElementById(id);
-    if(el){const r=document.createRange();r.selectNode(el);window.getSelection().removeAllRanges();window.getSelection().addRange(r);document.execCommand('copy');window.getSelection().removeAllRanges();}
-    btn.textContent="복사됨 ✓";btn.classList.add("copied");
-    setTimeout(()=>{btn.textContent="복사";btn.classList.remove("copied");},1500);
+function renderTags() {
+  var bar = document.getElementById("tagBar");
+  if(!bar) return;
+  bar.innerHTML = "";
+  var cs = cats();
+  for(var i=0;i<cs.length;i++) {
+    (function(cat) {
+      var t = document.createElement("button");
+      t.className = "tag" + (cat===activeTag ? " active" : "");
+      t.textContent = cat;
+      t.onclick = function() { activeTag=cat; renderTags(); render(); };
+      bar.appendChild(t);
+    })(cs[i]);
   }
 }
 
-function openLightbox(k){document.getElementById("lbImg").src=IMGS[k];document.getElementById("lightbox").classList.add("open");}
-function closeLightbox(){document.getElementById("lightbox").classList.remove("open");}
-
-function renderMgmt(){
-  document.getElementById("mgmtList").innerHTML=DATA.map(item=>
-    '<div class="mgmt-card"><div class="mgmt-title">'+item.title+'</div><div class="mgmt-meta">'+item.category+' · 키워드 '+item.keywords.length+'개 · 답변 '+item.answers.length+'개'+(item.images&&item.images.length?' · 이미지 '+item.images.length+'개':'')+'</div><div class="mgmt-actions"><button class="btn-edit" onclick="openModal('+item.id+')">수정</button><button class="btn-del" onclick="deleteItem('+item.id+')">삭제</button></div></div>'
-  ).join("");
+function render() {
+  var filtered = [];
+  for(var i=0;i<DATA.length;i++) { if(matches(DATA[i])) filtered.push(DATA[i]); }
+  document.getElementById("countText").textContent = filtered.length + "개 항목";
+  var results = document.getElementById("results");
+  if(!filtered.length) { results.innerHTML = '<div class="empty">검색 결과가 없습니다</div>'; return; }
+  var html = "";
+  for(var fi=0;fi<filtered.length;fi++) {
+    var item = filtered[fi];
+    html += '<div class="card">';
+    html += '<div class="card-header"><div class="card-title">'+escHtml(item.title)+'</div><span class="badge">'+escHtml(item.category)+'</span></div>';
+    html += '<div class="keywords">';
+    for(var ki=0;ki<item.keywords.length;ki++) html += '<span>'+escHtml(item.keywords[ki])+'</span>';
+    html += '</div>';
+    for(var ai=0;ai<item.answers.length;ai++) {
+      var a = item.answers[ai];
+      var elId = "ans_"+item.id+"_"+ai;
+      if(item.answers.length>1) html += '<div class="answer-label">'+escHtml(a.label)+'</div>';
+      html += '<div class="answer-box" id="'+elId+'">'+escHtml(a.text)+'</div>';
+      html += '<button class="copy-btn" data-id="'+elId+'">복사</button>';
+    }
+    if(item.memo) {
+      html += '<div style="margin-top:8px;border-top:1px solid #f0f0f0;padding-top:10px;">';
+      html += '<div class="memo-label">내부 메모</div>';
+      html += '<div class="memo-box">'+escHtml(item.memo).replace(/\n/g,"<br>")+'</div></div>';
+    }
+    if(item.images && item.images.length) {
+      html += '<div class="img-section"><div class="img-label">참고 이미지 — 클릭하면 크게 보기</div><div style="display:flex;flex-wrap:wrap;gap:8px;">';
+      for(var ii=0;ii<item.images.length;ii++) {
+        html += '<img src="'+IMGS[item.images[ii]]+'" class="img-thumb" data-img="'+item.images[ii]+'" alt="참고 이미지">';
+      }
+      html += '</div></div>';
+    }
+    html += '</div>';
+  }
+  results.innerHTML = html;
+  var copyBtns = results.querySelectorAll(".copy-btn");
+  for(var ci=0;ci<copyBtns.length;ci++) {
+    (function(btn) {
+      btn.onclick = function() { copyText(btn.getAttribute("data-id"), btn); };
+    })(copyBtns[ci]);
+  }
+  var imgThumbs = results.querySelectorAll(".img-thumb");
+  for(var ti=0;ti<imgThumbs.length;ti++) {
+    (function(img) {
+      img.onclick = function() { openLightbox(img.getAttribute("data-img")); };
+    })(imgThumbs[ti]);
+  }
 }
 
-function deleteItem(id){
-  if(!confirm("이 항목을 삭제할까요?"))return;
-  DATA=DATA.filter(d=>d.id!==id);
-  saveToLocal();renderMgmt();render();
+function escHtml(str) {
+  if(!str) return "";
+  return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
 
-function addAnswerRow(label,text){
-  const ed=document.getElementById("answersEditor");
-  const row=document.createElement("div");row.className="answer-row";
-  row.innerHTML='<input type="text" placeholder="구분명" value="'+label+'"><textarea placeholder="답변 내용">'+text+'</textarea><button class="btn-rm" onclick="this.parentElement.remove()">×</button>';
+function copyText(id, btn) {
+  var el = document.getElementById(id);
+  if(!el) return;
+  var text = el.textContent;
+  if(navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      btn.textContent="복사됨 ✓"; btn.classList.add("copied");
+      setTimeout(function(){btn.textContent="복사";btn.classList.remove("copied");},1500);
+    }).catch(function() { fallbackCopy(el,btn); });
+  } else { fallbackCopy(el,btn); }
+}
+
+function fallbackCopy(el, btn) {
+  var r = document.createRange();
+  r.selectNode(el);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(r);
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+  btn.textContent="복사됨 ✓"; btn.classList.add("copied");
+  setTimeout(function(){btn.textContent="복사";btn.classList.remove("copied");},1500);
+}
+
+function openLightbox(k) { document.getElementById("lbImg").src=IMGS[k]; document.getElementById("lightbox").classList.add("open"); }
+function closeLightbox() { document.getElementById("lightbox").classList.remove("open"); }
+
+function renderMgmt() {
+  var html = "";
+  for(var i=0;i<DATA.length;i++) {
+    var item = DATA[i];
+    html += '<div class="mgmt-card">';
+    html += '<div class="mgmt-title">'+escHtml(item.title)+'</div>';
+    html += '<div class="mgmt-meta">'+escHtml(item.category)+' · 키워드 '+item.keywords.length+'개 · 답변 '+item.answers.length+'개'+(item.images&&item.images.length?' · 이미지 '+item.images.length+'개':'')+'</div>';
+    html += '<div class="mgmt-actions"><button class="btn-edit" data-id="'+item.id+'">수정</button><button class="btn-del" data-id="'+item.id+'">삭제</button></div>';
+    html += '</div>';
+  }
+  document.getElementById("mgmtList").innerHTML = html;
+  var editBtns = document.querySelectorAll(".btn-edit");
+  for(var i=0;i<editBtns.length;i++) {
+    (function(btn){ btn.onclick=function(){openModal(parseInt(btn.getAttribute("data-id")));};  })(editBtns[i]);
+  }
+  var delBtns = document.querySelectorAll(".btn-del");
+  for(var i=0;i<delBtns.length;i++) {
+    (function(btn){ btn.onclick=function(){deleteItem(parseInt(btn.getAttribute("data-id")));};  })(delBtns[i]);
+  }
+}
+
+function deleteItem(id) {
+  if(!confirm("이 항목을 삭제할까요?")) return;
+  var newData = [];
+  for(var i=0;i<DATA.length;i++) { if(DATA[i].id!==id) newData.push(DATA[i]); }
+  DATA = newData;
+  saveToLocal(); renderMgmt(); render();
+}
+
+function addAnswerRow(label, text) {
+  var ed = document.getElementById("answersEditor");
+  var row = document.createElement("div");
+  row.className = "answer-row";
+  var inp = document.createElement("input");
+  inp.type="text"; inp.placeholder="구분명"; inp.value=label||"";
+  var ta = document.createElement("textarea");
+  ta.placeholder="답변 내용"; ta.textContent=text||"";
+  var btn = document.createElement("button");
+  btn.className="btn-rm"; btn.textContent="×";
+  btn.onclick=function(){row.parentElement.removeChild(row);};
+  row.appendChild(inp); row.appendChild(ta); row.appendChild(btn);
   ed.appendChild(row);
 }
 
-function openModal(id){
-  editingId=id;
-  const item=id?DATA.find(d=>d.id===id):null;
-  document.getElementById("modalTitle").textContent=id?"항목 수정":"새 항목 추가";
-  document.getElementById("fCat").value=item?item.category:"";
-  document.getElementById("fTitle").value=item?item.title:"";
-  document.getElementById("fKeywords").value=item?item.keywords.join(", "):"";
-  document.getElementById("fMemo").value=item?(item.memo||""):"";
-  const ed=document.getElementById("answersEditor");ed.innerHTML="";
-  if(item)item.answers.forEach(a=>addAnswerRow(a.label,a.text));
+function openModal(id) {
+  editingId = id;
+  var item = null;
+  for(var i=0;i<DATA.length;i++){if(DATA[i].id===id){item=DATA[i];break;}}
+  document.getElementById("modalTitle").textContent = id ? "항목 수정" : "새 항목 추가";
+  document.getElementById("fCat").value = item ? item.category : "";
+  document.getElementById("fTitle").value = item ? item.title : "";
+  document.getElementById("fKeywords").value = item ? item.keywords.join(", ") : "";
+  document.getElementById("fMemo").value = item ? (item.memo||"") : "";
+  var ed = document.getElementById("answersEditor"); ed.innerHTML = "";
+  if(item) { for(var i=0;i<item.answers.length;i++) addAnswerRow(item.answers[i].label,item.answers[i].text); }
   else addAnswerRow("","");
   document.getElementById("modalBg").classList.add("open");
 }
 
-function closeModal(){document.getElementById("modalBg").classList.remove("open");}
+function closeModal() { document.getElementById("modalBg").classList.remove("open"); }
 
-function saveItem(){
-  const category=document.getElementById("fCat").value.trim();
-  const title=document.getElementById("fTitle").value.trim();
-  const keywords=document.getElementById("fKeywords").value.split(/[,，]/).map(k=>k.trim()).filter(Boolean);
-  const memo=document.getElementById("fMemo").value.trim();
-  const rows=document.querySelectorAll("#answersEditor .answer-row");
-  const answers=Array.from(rows).map(r=>({label:r.querySelector("input").value.trim()||"답변",text:r.querySelector("textarea").value.trim()})).filter(a=>a.text);
-  if(!category||!title||!answers.length){alert("카테고리, 제목, 답변을 모두 입력해 주세요.");return;}
-  if(editingId){
-    const idx=DATA.findIndex(d=>d.id===editingId);
-    DATA[idx]={...DATA[idx],category,title,keywords,memo,answers};
-  }else{
-    DATA.push({id:nextId++,category,title,keywords,memo,answers,images:[]});
+function saveItem() {
+  var category = document.getElementById("fCat").value.trim();
+  var title = document.getElementById("fTitle").value.trim();
+  var kwRaw = document.getElementById("fKeywords").value;
+  var kwArr = kwRaw.split(/[,，]/);
+  var keywords = [];
+  for(var i=0;i<kwArr.length;i++){var k=kwArr[i].trim();if(k)keywords.push(k);}
+  var memo = document.getElementById("fMemo").value.trim();
+  var rows = document.querySelectorAll("#answersEditor .answer-row");
+  var answers = [];
+  for(var i=0;i<rows.length;i++){
+    var t=rows[i].querySelector("textarea").value.trim();
+    if(t) answers.push({label:rows[i].querySelector("input").value.trim()||"답변",text:t});
   }
-  closeModal();saveToLocal();renderMgmt();render();
+  if(!category||!title||!answers.length){alert("카테고리, 제목, 답변을 모두 입력해 주세요.");return;}
+  if(editingId) {
+    for(var i=0;i<DATA.length;i++){
+      if(DATA[i].id===editingId){
+        DATA[i].category=category;DATA[i].title=title;DATA[i].keywords=keywords;DATA[i].memo=memo;DATA[i].answers=answers;
+        break;
+      }
+    }
+  } else {
+    DATA.push({id:nextId++,category:category,title:title,keywords:keywords,memo:memo,answers:answers,images:[]});
+  }
+  closeModal(); saveToLocal(); renderMgmt(); render();
 }
 
-function saveToLocal(){
-  try{
+function saveToLocal() {
+  try {
     localStorage.setItem("csToolData",JSON.stringify(DATA));
     localStorage.setItem("csToolNextId",String(nextId));
     localStorage.setItem("csToolVersion",FILE_VERSION);
-  }catch(e){console.error("저장 실패",e);}
+  } catch(e){console.error("저장 실패",e);}
 }
 
-function loadFromLocal(){
-  try{
-    const savedVersion=localStorage.getItem("csToolVersion");
-    if(savedVersion!==FILE_VERSION){
-      localStorage.clear();
-      localStorage.setItem("csToolVersion",FILE_VERSION);
-      return;
-    }
-    const d=localStorage.getItem("csToolData");
-    const n=localStorage.getItem("csToolNextId");
-    if(d){DATA=JSON.parse(d);}
-    if(n){nextId=parseInt(n);}
-  }catch(e){console.error("불러오기 실패",e);}
+function loadFromLocal() {
+  try {
+    var sv=localStorage.getItem("csToolVersion");
+    if(sv!==FILE_VERSION){localStorage.clear();localStorage.setItem("csToolVersion",FILE_VERSION);return;}
+    var d=localStorage.getItem("csToolData");
+    var n=localStorage.getItem("csToolNextId");
+    if(d) DATA=JSON.parse(d);
+    if(n) nextId=parseInt(n);
+  } catch(e){console.error("불러오기 실패",e);}
 }
 
-function exportFile(){
-  const today=new Date();
-  const ds=today.getFullYear()+"-"+String(today.getMonth()+1).padStart(2,"0")+"-"+String(today.getDate()).padStart(2,"0");
-  fetch(location.href)
-    .then(r=>r.text())
-    .then(src=>{
-      src=src.replace(/let DATA = \[[\s\S]*?\];/, "let DATA = "+JSON.stringify(DATA)+";");
-      src=src.replace(/let nextId = \d+;/, "let nextId = "+nextId+";");
-      src=src.replace(/최종 업데이트: [\d\-]+/, "최종 업데이트: "+ds);
-      switchTab("search");
-      const blob=new Blob([src],{type:"text/html"});
-      const a=document.createElement("a");
-      a.href=URL.createObjectURL(blob);
-      a.download="cs_tool.html";
-      a.click();
-    })
-    .catch(()=>{
-      alert("GitHub URL에서 열어야 내보내기가 정상 작동합니다.
-https://jagger1003.github.io/cs-tool/cs_tool.html");
-    });
+function exportFile() {
+  var today=new Date();
+  var ds=today.getFullYear()+"-"+String(today.getMonth()+1).padStart(2,"0")+"-"+String(today.getDate()).padStart(2,"0");
+  fetch(location.href).then(function(r){return r.text();}).then(function(src){
+    src=src.replace(/var DATA = \[[\s\S]*?\];/,"var DATA = "+JSON.stringify(DATA)+";");
+    src=src.replace(/var nextId = \d+;/,"var nextId = "+nextId+";");
+    src=src.replace(/최종 업데이트: [\d\-]+/,"최종 업데이트: "+ds);
+    switchTab("search");
+    var blob=new Blob([src],{type:"text/html"});
+    var a=document.createElement("a");
+    a.href=URL.createObjectURL(blob);
+    a.download="cs_tool.html";
+    a.click();
+  }).catch(function(){alert("GitHub URL에서 열어야 내보내기가 정상 작동합니다.");});
 }
 
 loadFromLocal();
 renderTags();
 render();
 </script>
-
-
-</body></html>
+</body>
+</html>
